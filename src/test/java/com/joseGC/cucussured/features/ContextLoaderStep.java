@@ -1,13 +1,13 @@
 package com.joseGC.cucussured.features;
 
-import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ContextLoaderStep{
 
-    @Before
-    public void theServiceIsRunningAndAbleToReceiveAndProcessRequests() {
+    @Given("^the site is running$")
+    public void theSiteIsRunning() {
         // Dummy method so cucumber will recognize this class as glue
         // and use its context configuration.
     }

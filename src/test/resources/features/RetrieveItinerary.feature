@@ -1,7 +1,11 @@
+
 Feature: Retrieve Itinerary
   As a client of this airline
   I want to retrieve available itineraries
   So I can make a decision on which flight to buy
+
+  Background:
+    Given the site is running
 
   Scenario: Retrieve itinerary
     Given a designator "BRAVO" to be introduced as a path variable
