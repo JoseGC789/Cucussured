@@ -9,8 +9,6 @@ import java.util.Map;
 public abstract class FunctionalTest {
     @LocalServerPort
     protected int port;
-    @Value("${server.servlet.context-path}")
-    protected String contextPath;
     protected Response response;
     protected Map<String, String> headers = new HashMap<>();
     protected Map<String, String> pathVariables = new HashMap<>();
