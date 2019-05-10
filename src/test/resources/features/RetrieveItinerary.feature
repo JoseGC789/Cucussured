@@ -1,21 +1,19 @@
+# language: es
 
-Feature: Retrieve Itinerary
-  As a client of this airline
-  I want to retrieve available itineraries
-  So I can make a decision on which flight to buy
+Característica: Recuperar itinerario
+  Como cliente de esta aerolinea
+  Deseo recuperar todos los itinerarios disponibles
+  Para poder tomar una desición sobre cual vuelo tomar
 
-  Background:
-    Given the site is running
+  Antecedentes:
+    Dado el sitio está encendido
 
-  Scenario Outline: <description>
-    Given a designator <designator> to be introduced as a path variable
-    And the request content type is json
-    When I send it to the api "/itinerary/{pathVariable}"
-    And the http verb is get
-    Then the api should respond
-    And the code should be <response>
-    Examples:
-    |designator|response     |description         |
-    |"BRAVO"   |"OK"         |"Retrieve itinerary"|
-    |"ZULU"    |"NO_CONTENT" |"Empty itinerary"   |
-    |"PAPA"    |"BAD_REQUEST"|"Wrong designator"  |
+  Esquema del escenario: <descripción>
+    Dado que quiero conocer el itinerario de un <designador>
+    Cuando accedo al sitio "/itinerary/{pathVariable}"
+    Entonces la api deberá responder con <respuesta>
+    Ejemplos:
+    |designador|respuesta    |descripción              |
+    |"BRAVO"   |"OK"         |"Recuperar itinerario"   |
+    |"ZULU"    |"NO_CONTENT" |"Itinerario vacio"       |
+    |"PAPA"    |"BAD_REQUEST"|"Designador incorrecto"  |
