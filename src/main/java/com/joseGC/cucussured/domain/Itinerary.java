@@ -16,6 +16,9 @@ public final class Itinerary{
     private final Integer number;
 
     public static boolean isValid(String designation){
+        if(null == designation){
+            throw new AssertionError();
+        }
         if(Arrays.stream(Fields.values()).anyMatch(value -> value.getField().equalsIgnoreCase(designation))){
             return true;
         }
